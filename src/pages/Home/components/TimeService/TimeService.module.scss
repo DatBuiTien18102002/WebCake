@@ -1,0 +1,70 @@
+.service {
+    background-image: url('../../../../assets/images/picture_time_shop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .service-tittle {
+        color: white;
+        margin-bottom: 5rem;
+        &::after {
+            border-bottom-color: white;
+        }
+    }
+}
+
+.service-content {
+    margin: 12.5rem 0;
+
+    padding: 4rem 4rem 10rem 4rem;
+    border-radius: 2rem;
+    max-width: 79.6rem;
+    background-color: var(--primary);
+}
+
+.service-info {
+    margin-bottom: 5rem;
+}
+
+.service-wrapper {
+    display: flex;
+    color: white;
+    font-weight: bold;
+    p {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+}
+
+.service-time {
+    flex: 1;
+    text-align: center;
+}
+
+.service-time-tittle {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .service-wrapper {
+        p {
+            font-size: 1.8rem;
+        }
+    }
+    .service-time-tittle {
+        font-size: 2rem;
+        br {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .service-wrapper {
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+}

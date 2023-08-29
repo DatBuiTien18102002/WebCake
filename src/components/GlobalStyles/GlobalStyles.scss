@@ -1,16 +1,18 @@
 @import 'normalize.css';
 
 :root {
-    --primary: #fe2c55;
+    --primary: #c19977;
     --textcolor: #161823;
     --black: #000;
     --white: #fff;
     --font-family: 'ProximaNova', sans-serif;
+    --font-tittle: 'TittleFont', sans-serif;
 
-    //Default layout
+    //Main layout
     --header-height: 60px;
-    --header-container-width: 1150px;
+    --header-container-width: 1250px;
     --default-layout-horizontal-spacer: 24px;
+    --section-height: 568px;
 }
 
 * {
@@ -24,12 +26,28 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    // font-family: sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--textcolor);
     overflow-y: overlay;
+}
+
+.App {
+    max-width: 160rem;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: var(--header-container-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
 }
 
 ::-webkit-scrollbar {
@@ -85,6 +103,38 @@ body {
     }
 }
 
+.tittle {
+    padding-top: 7rem;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+    color: var(--primary);
+    h2 {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        display: block;
+        width: 16rem;
+
+        border-bottom: 0.1rem solid var(--primary);
+    }
+
+    .diamond-icon {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        bottom: 0;
+        z-index: 1;
+    }
+}
+
 //Fonts emmbeded
 
 @font-face {
@@ -110,7 +160,27 @@ body {
 
 @font-face {
     font-family: TittleFont;
-    src: url('/assets/fonts/MsMadi-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('/assets/fonts/MsMadi-Regular.ttf');
+    font-weight: 400;
 }
+
+// .bgImage {
+//     width: 100%;
+//     height: 500px;
+// }
+
+// .wrapper {
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     overflow: hidden;
+// }
+
+// .carousel-slides {
+//     width: 80%;
+// }
+// .tittle {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+// }

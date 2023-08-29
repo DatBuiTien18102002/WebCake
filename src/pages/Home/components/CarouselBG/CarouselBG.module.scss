@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+}
+.bgImage {
+    width: 100%;
+    height: var(--section-height);
+}
+
+.carousel-slides {
+    width: 100%;
+}
+
+.tittle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.bg-icon {
+    color: white;
+    font-size: 4rem;
+    font-family: var(--font-tittle);
+}
+.icon-bakery {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.bg-namebakery {
+    color: white;
+    font-size: 8rem;
+    font-family: var(--font-tittle);
+}
