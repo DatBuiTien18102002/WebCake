@@ -7,7 +7,7 @@ import { faDiamond } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 function Introduce() {
     return (
-        <div className={cx('introduce')}>
+        <section id="Introduce" className={cx('introduce')}>
             <div className={cx('container')}>
                 <div className="row">
                     <div className="col-lg-7 col-sm-12 order-lg-1 order-2 ">
@@ -22,9 +22,7 @@ function Introduce() {
                     </div>
                     <div className="col-lg-5 col-sm-12 order-lg-2  order-1 gx-5 d-flex flex-column justify-content-center">
                         <p className={cx('introduce-name')}>Baroibeo bakery</p>
-                        <p className={cx('introduce-tittle')}>
-                            <h2>VỀ CHÚNG TÔI</h2>
-                        </p>
+                        <h2 className={cx('introduce-tittle')}>VỀ CHÚNG TÔI</h2>
 
                         <div className={cx('introduce-separate')}>
                             <FontAwesomeIcon icon={faDiamond} className={cx('introduce-icon')} />
@@ -42,7 +40,7 @@ function Introduce() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -28,6 +28,9 @@ function Menu({ children, items = [], hideOnClick = false, onClick = defaultOncl
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
+                        } else if (item.tittle === 'Đăng nhập' || item.tittle === 'Đăng ký') {
+                            console.log('onclick');
+                            item.onClick();
                         } else {
                             onClick(item);
                         }
@@ -59,9 +62,9 @@ function Menu({ children, items = [], hideOnClick = false, onClick = defaultOncl
             <HeadlessTippy
                 interactive
                 hideOnClick={hideOnClick}
-                delay={[0, 700]}
+                // delay={[0, 700]}
                 placement="bottom-end"
-                offset={[12, 17]} //Chỉnh vị trí headlesstippy
+                offset={[17, 17]} //Chỉnh vị trí headlesstippy
                 render={renderResult}
                 onHide={handleResultOnHide}
             >

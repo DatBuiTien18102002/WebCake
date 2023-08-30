@@ -1,0 +1,33 @@
+.wrapper {
+    overflow: hidden;
+}
+.container {
+    display: flex;
+
+    margin-top: var(--header-height);
+    flex-direction: column;
+}
+.breadcrumb-container {
+    max-width: var(--header-container-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 1rem;
+    background-color: #f4f2ed;
+    font-size: 1.8rem;
+    font-weight: bold;
+    .breadcrumb-item {
+        color: var(--primary) !important;
+
+        &:hover {
+            filter: brightness(80%);
+        }
+    }
+}

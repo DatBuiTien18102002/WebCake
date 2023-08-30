@@ -5,7 +5,7 @@
     margin-top: 30px;
 
     background: {
-        attachment: scroll;
+        attachment: fixed;
         image: url('/assets/images/menu.jpg');
         repeat: no-repeat;
         size: 100% 100%;
@@ -79,7 +79,10 @@
 }
 
 .menu-item-name-wrapp {
+    display: flex;
+    align-items: center;
     span {
+        padding-left: 1rem;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;

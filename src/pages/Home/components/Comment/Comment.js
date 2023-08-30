@@ -71,7 +71,7 @@ function Comment() {
         ],
     };
     return (
-        <div className={cx('comment')}>
+        <section id="Comment" className={cx('comment')}>
             <div className={cx('container')}>
                 <div className="row">
                     <div className="col-12">
@@ -82,7 +82,7 @@ function Comment() {
 
                         <Slider {...settings} className={cx('comment-list')}>
                             {comments.map((comment) => (
-                                <div className={cx('comment-item')}>
+                                <div key={comment.name} className={cx('comment-item')}>
                                     <div className={cx('comment-info')}>
                                         <img src={comment.avatar} alt="" className={cx('comment-img')} />
                                         <div className={cx('comment-info-wrapper')}>
@@ -104,7 +104,7 @@ function Comment() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

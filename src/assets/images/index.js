@@ -4,6 +4,7 @@ const images = {
     bgImage: require('~/assets/images/bgcake1.jpg'),
     bgImage2: require('~/assets/images/bgcake2.jpg'),
     bgImage3: require('~/assets/images/bgcake3.jpg'),
+    contactImg: require('~/assets/images/contact-us-image.jpg'),
 
     cake: {
         cupcake: require('~/assets/images/Cake/cupcake.jpg'),

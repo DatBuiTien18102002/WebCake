@@ -47,7 +47,7 @@ const menuItems = [
 
 function Menu() {
     return (
-        <div className={cx('menu')}>
+        <section id="DiscoverMenu" className={cx('menu')}>
             <div className={cx('container')}>
                 <div className="row">
                     <div className="col-12">
@@ -58,14 +58,14 @@ function Menu() {
                             </div>
                             <div className={cx('menu-list')}>
                                 {menuItems.map((menuItem) => (
-                                    <div className={cx('menu-item')}>
+                                    <div key={menuItem.name} className={cx('menu-item')}>
                                         <div className={cx('menu-img')}>
                                             <img src={menuItem.image} alt="" />
                                         </div>
                                         <div className={cx('menu-item-info')}>
                                             <div className={cx('menu-item-title')}>
                                                 <div className={cx('menu-item-name-wrapp')}>
-                                                    <i class="fa-solid fa-diamond"></i>
+                                                    <FontAwesomeIcon icon={faDiamond} className={cx('diamond-icon')} />
                                                     <span>{menuItem.name}</span>
                                                 </div>
                                                 <div className={cx('menu-item-price')}>{menuItem.price}</div>
@@ -83,7 +83,7 @@ function Menu() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

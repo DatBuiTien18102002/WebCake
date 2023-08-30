@@ -17,6 +17,10 @@
                 border-top: 1px solid rgba(22, 24, 35, 0.12);
             }
 
+            &.noIcon {
+                display: flex;
+                justify-content: center;
+            }
             &:hover {
                 background-color: rgba(22, 24, 35, 0.03);
             }

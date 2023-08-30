@@ -67,7 +67,7 @@ function Footer(props) {
                                     <div className={cx('footer-tittle')}>Liên hệ</div>
                                     <div className={cx('footer-address')}>
                                         <FontAwesomeIcon className={cx('footer-icon')} icon={faPhone} />
-                                        <div className={cx('footer-text')}> HotLine đặt hàng: 0766980573</div>
+                                        <div className={cx('footer-text')}> HotLine đặt hàng: 0766980574</div>
                                     </div>
                                     <div className={cx('footer-address')}>
                                         <FontAwesomeIcon className={cx('footer-icon')} icon={faEnvelope} />

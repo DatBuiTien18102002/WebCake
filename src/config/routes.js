@@ -1,9 +1,9 @@
 const routes = {
     home: '/',
-    aboutUs: '/about-us',
-    product: '/shop',
-    blog: '/blog',
-    contact: '/contact',
+    aboutUs: '/About-us',
+    product: '/Product',
+    blog: '/Blog',
+    contact: '/Contact',
 };
 
 export default routes;

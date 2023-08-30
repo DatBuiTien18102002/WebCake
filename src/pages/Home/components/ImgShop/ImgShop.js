@@ -11,7 +11,7 @@ ImgShop.propTypes = {};
 
 function ImgShop(props) {
     return (
-        <div className={cx('image-shop')}>
+        <section id="ImageShop" className={cx('image-shop')}>
             <div className={cx('container')}>
                 <div className="row">
                     <div className="col-12">
@@ -36,7 +36,7 @@ function ImgShop(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -11,7 +11,7 @@ TimeService.propTypes = {};
 
 function TimeService(props) {
     return (
-        <div className={cx('service')}>
+        <section id="ServiceTime" className={cx('service')}>
             <div className={cx('container')}>
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
@@ -30,14 +30,14 @@ function TimeService(props) {
                                     <div className={cx('service-time-tittle')}>
                                         Thứ 2 - Thứ 6 <br /> hàng tuần
                                     </div>
-                                    <p>7 am - 11 pm</p>
+                                    <p>7 am - 11 am</p>
                                     <p>1 pm - 10 pm</p>
                                 </div>
                                 <div className={cx('service-time')}>
                                     <div className={cx('service-time-tittle')}>
                                         Thứ 7 - Chủ nhật <br /> hàng tuần
                                     </div>
-                                    <p>8 am - 11 pm</p>
+                                    <p>8 am - 11 am</p>
                                     <p>1 pm - 9 pm</p>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@ function TimeService(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

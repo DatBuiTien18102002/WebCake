@@ -4,10 +4,11 @@ import styles from './Popper.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Popper({ children, className, arrow = false }) {
+function Popper({ children, className, arrow = false, arrowPosition = 'left' }) {
     const classes = cx('wrapper', {
         arrow,
         [className]: className,
+        [arrowPosition]: arrowPosition,
     });
     return <div className={classes}>{children}</div>;
 }

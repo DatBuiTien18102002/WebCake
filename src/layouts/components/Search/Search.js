@@ -95,7 +95,7 @@ function Search() {
                     <input
                         ref={inputSearch}
                         value={headerInput}
-                        placeholder="Search accounts and videos"
+                        placeholder="Tìm kiếm bánh"
                         spellCheck={false}
                         onChange={handleInput}
                         onFocus={() => setShowResult(true)}

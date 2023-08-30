@@ -6,7 +6,7 @@
     font-weight: 700;
     font-family: var(--font-family);
     min-width: 100px;
-    padding: 9px 16px;
+    padding: 4px 16px;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -14,7 +14,7 @@
     user-select: none;
 
     + .wrapper {
-        margin-left: 8px;
+        margin-left: 10px;
     }
 
     &.disable {
@@ -52,7 +52,7 @@
 
     &:hover {
         border-color: currentColor;
-        background-color: transparent;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), transparent;
     }
 }
 

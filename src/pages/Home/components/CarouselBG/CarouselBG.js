@@ -27,7 +27,7 @@ function CarouselBG({ items }, args) {
         if (animating) return;
         setActiveIndex(newIndex);
     };
-    console.log(items);
+
     const slides = items.map((item) => {
         return (
             <CarouselItem onExiting={() => setAnimating(true)} onExited={() => setAnimating(false)} key={item.src}>
@@ -45,7 +45,7 @@ function CarouselBG({ items }, args) {
         );
     });
     return (
-        <div className={cx('carouselBg')}>
+        <section className={cx('carouselBg')}>
             <div className={cx('container')}>
                 <div className="row">
                     <div className="col-12">
@@ -76,7 +76,7 @@ function CarouselBG({ items }, args) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

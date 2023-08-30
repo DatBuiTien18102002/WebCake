@@ -105,3 +105,15 @@
         padding-right: 40px;
     }
 }
+
+@media screen and (max-width: 476px) {
+    .search {
+        input {
+            max-width: 120px;
+            padding-right: 0px;
+        }
+    }
+    .search-btn {
+        margin-left: auto;
+    }
+}
