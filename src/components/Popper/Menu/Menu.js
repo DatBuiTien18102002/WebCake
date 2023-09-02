@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const defaultOnclick = () => {};
 
-function Menu({ children, items = [], hideOnClick = false, onClick = defaultOnclick }) {
+function Menu({ children, items = [], arrow = false, hideOnClick = false, onClick = defaultOnclick }) {
     const [history, setHistory] = useState([{ data: items }]);
 
     const current = history[history.length - 1];
@@ -46,7 +46,7 @@ function Menu({ children, items = [], hideOnClick = false, onClick = defaultOncl
 
     const renderResult = (attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-            <PopperWrapper arrow className={cx('menu-popper')}>
+            <PopperWrapper arrow={arrow} className={cx('menu-popper')}>
                 {history.length > 1 && <HeaderMenu tittle={current.tittle} onBack={handleBack} />}
                 <div className={cx('body-menu')}>{renderItems()}</div>
             </PopperWrapper>

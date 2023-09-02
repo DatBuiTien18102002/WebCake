@@ -21,6 +21,11 @@
         pointer-events: none;
         opacity: 0.5;
     }
+
+    .tittle {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .rounded {

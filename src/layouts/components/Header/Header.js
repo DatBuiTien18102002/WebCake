@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import Tippy from '@tippyjs/react';
+
 // import tippy css
 import 'tippy.js/dist/tippy.css';
 
@@ -126,6 +126,7 @@ const handleMenuChange = (menuItem) => {
 function Header({ isHomePage = false }) {
     const inputMobile = useRef();
     const currentUser = false;
+    const hasCart = true;
 
     useEffect(() => {
         inputMobile.current.checked = false;
@@ -250,6 +251,9 @@ function Header({ isHomePage = false }) {
                                 <div className={cx('nav-content')}>Home</div>
                             </Link>
                         )}
+                        <Link to={config.routes.aboutUs} className={cx('nav-link')}>
+                            <div className={cx('nav-content')}>AboutUs</div>
+                        </Link>
 
                         <Link to={config.routes.product} className={cx('nav-link')}>
                             <div className={cx('nav-content')}>Product</div>
@@ -258,24 +262,119 @@ function Header({ isHomePage = false }) {
                             <div className={cx('nav-content')}>Contact</div>
                         </Link>
                         {/* <Link to={config.routes.aboutUs} className={cx('nav-link')}>
-                                <div className={cx('nav-content')}>AboutUs</div>
+                                <div className={cx('nav-content')}>Blog</div>
                             </Link> */}
-                        <Link to={config.routes.blog} className={cx('nav-link')}>
-                            <div className={cx('nav-content')}>Blog</div>
-                        </Link>
                     </nav>
                 </div>
 
                 <Search />
 
                 <div className={cx('action')}>
-                    <Tippy content="Shopping">
+                    <HeadlessTippy
+                        interactive
+                        placement="bottom-end"
+                        offset={[3, 17]}
+                        render={(attrs) => (
+                            <div className={cx('cart-result')} tabIndex="-1" {...attrs}>
+                                <PopperWrapper arrow>
+                                    {hasCart ? (
+                                        <div className={cx('cart__has-cart')}>
+                                            <h4 className={cx('cart-tittle')}>Sản phẩm đã thêm</h4>
+                                            <ul className={cx('cart-list')}>
+                                                <li className={cx('cart-item')}>
+                                                    <img
+                                                        className={cx('cart-img')}
+                                                        src={images.cake.creamCake}
+                                                        alt=""
+                                                    />
+                                                    <div className={cx('cart-info')}>
+                                                        <div className={cx('cart-heading')}>
+                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
+                                                            <div className={cx('cart-price-wrapper')}>
+                                                                <span className={cx('cart-price')}>2.000.000đ</span>
+                                                                <span className={cx('cart-multiply')}>x</span>
+                                                                <span className={cx('cart-qnt')}>2</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className={cx('cart-body')}>
+                                                            <span className={cx('cart-desc')}>
+                                                                Phân loại: Bánh ngọt
+                                                            </span>
+                                                            <span className={cx('cart-delete')}>Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li className={cx('cart-item')}>
+                                                    <img
+                                                        className={cx('cart-img')}
+                                                        src={images.cake.creamCake}
+                                                        alt=""
+                                                    />
+                                                    <div className={cx('cart-info')}>
+                                                        <div className={cx('cart-heading')}>
+                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
+                                                            <div className={cx('cart-price-wrapper')}>
+                                                                <span className={cx('cart-price')}>2.000.000đ</span>
+                                                                <span className={cx('cart-multiply')}>x</span>
+                                                                <span className={cx('cart-qnt')}>2</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className={cx('cart-body')}>
+                                                            <span className={cx('cart-desc')}>
+                                                                Phân loại: Bánh ngọt
+                                                            </span>
+                                                            <span className={cx('cart-delete')}>Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li className={cx('cart-item')}>
+                                                    <img
+                                                        className={cx('cart-img')}
+                                                        src={images.cake.creamCake}
+                                                        alt=""
+                                                    />
+                                                    <div className={cx('cart-info')}>
+                                                        <div className={cx('cart-heading')}>
+                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
+                                                            <div className={cx('cart-price-wrapper')}>
+                                                                <span className={cx('cart-price')}>2.000.000đ</span>
+                                                                <span className={cx('cart-multiply')}>x</span>
+                                                                <span className={cx('cart-qnt')}>2</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className={cx('cart-body')}>
+                                                            <span className={cx('cart-desc')}>
+                                                                Phân loại: Bánh ngọt
+                                                            </span>
+                                                            <span className={cx('cart-delete')}>Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <Button primary className={cx('cart-button')}>
+                                                Xem giỏ hàng
+                                            </Button>
+                                        </div>
+                                    ) : (
+                                        <div className={cx('cart__no-cart')}>
+                                            <img src={images.noCart} alt="" />
+                                            <span>Chưa có sản phẩm</span>
+                                        </div>
+                                    )}
+                                </PopperWrapper>
+                            </div>
+                        )}
+                    >
                         <button className={cx('shopping-btn')}>
                             <FontAwesomeIcon icon={faCartShopping} />
+                            <span className={cx('cart-quality')}>1</span>
                         </button>
-                    </Tippy>
+                    </HeadlessTippy>
 
-                    <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onClick={handleMenuChange}>
+                    <Menu arrow items={currentUser ? USER_MENU : MENU_ITEMS} onClick={handleMenuChange}>
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}

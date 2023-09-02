@@ -5,6 +5,8 @@ const images = {
     bgImage2: require('~/assets/images/bgcake2.jpg'),
     bgImage3: require('~/assets/images/bgcake3.jpg'),
     contactImg: require('~/assets/images/contact-us-image.jpg'),
+    aboutImg: require('~/assets/images/aboutus.jpg'),
+    noCart: require('~/assets/images/empty_cart.png'),
 
     cake: {
         cupcake: require('~/assets/images/Cake/cupcake.jpg'),
@@ -42,6 +44,13 @@ const images = {
         imgShop2: require('~/assets/images/picture_shop_2.jpg'),
         imgShop3: require('~/assets/images/picture_shop_3.jpg'),
         imgShop4: require('~/assets/images/picture_shop_4.jpg'),
+    },
+
+    aboutIcon: {
+        icon1: require('~/assets/images/about-icon-1.png'),
+        icon2: require('~/assets/images/about-icon-2.png'),
+        icon3: require('~/assets/images/about-icon-3.png'),
+        icon4: require('~/assets/images/about-icon-4.png'),
     },
 };
 

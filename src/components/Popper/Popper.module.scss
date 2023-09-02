@@ -1,7 +1,7 @@
 .wrapper {
     --background-color: rgba(255, 255, 255);
     width: 100%;
-    max-height: min((100vh - 96px) - 60px, 734px);
+    // max-height: min((100vh - 96px) - 60px, 734px);
     min-height: 100px;
     background-color: var(--background-color);
     box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
@@ -26,8 +26,8 @@
     }
 
     &.left.arrow::before {
-        top: -28px;
-        right: 15px;
+        top: -26px;
+        right: 13px;
     }
     &.center.arrow::before {
         top: -28px;
@@ -35,7 +35,7 @@
         transform: translateX(-50%);
     }
 }
-@media screen and (max-width: 407px) {
+@media screen and (max-width: 566px) {
     .wrapper {
         &.arrow::before {
             display: none;

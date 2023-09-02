@@ -22,7 +22,7 @@ function Introduce() {
                     </div>
                     <div className="col-lg-5 col-sm-12 order-lg-2  order-1 gx-5 d-flex flex-column justify-content-center">
                         <p className={cx('introduce-name')}>Baroibeo bakery</p>
-                        <h2 className={cx('introduce-tittle')}>VỀ CHÚNG TÔI</h2>
+                        <h2 className={cx('introduce-tittle')}>Giới thiệu</h2>
 
                         <div className={cx('introduce-separate')}>
                             <FontAwesomeIcon icon={faDiamond} className={cx('introduce-icon')} />
