@@ -5,6 +5,7 @@ import styles from './Contact.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiamond, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import images from '~/assets/images';
+import AuthForm from '~/layouts/components/AuthForm/AuthForm';
 
 Contact.propTypes = {};
 
@@ -78,9 +79,8 @@ function Contact() {
                     width="100%"
                     height="450"
                     style={{ border: 0, borderRadius: '15px' }}
-                    allowfullscreen=""
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
         </section>

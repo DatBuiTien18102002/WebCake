@@ -1,0 +1,155 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+
+    animation: fadeIn linear 0.1s;
+    z-index: 100000;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    --growth-From: 0.7s;
+    --grow-To: 1s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // z-index: 1;
+    animation: growth linear 0.1s;
+    width: 50rem;
+}
+
+.auth-form {
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+.auth-form__container {
+    padding: 1rem 3.2rem;
+}
+
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.2rem;
+}
+
+.auth-form__heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.auth-form__switch-btn {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.auth-form__input {
+    width: 100%;
+    height: 4rem;
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    padding: 0 1.2rem;
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.2rem;
+
+    &:focus {
+        border-color: var(--primary-darker);
+        box-shadow: unset;
+    }
+}
+
+.auth-form__aside {
+    margin-top: 2rem;
+}
+
+.auth-form__policy-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding: 0 1.2rem;
+}
+
+.auth-form__policy-link {
+    color: var(--primary);
+}
+
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__separate {
+    display: block;
+    height: 2.2rem;
+    margin: 0rem 1.6rem;
+    border-left: 0.1rem solid #eaeaea;
+}
+
+.auth-form__forgot {
+    color: var(--primary);
+}
+
+.auth-form__link {
+    font-size: 1.4rem;
+    color: #939393;
+}
+
+.auth-form_controls {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-back {
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.auth-form__socials {
+    background-color: #f5f5f5;
+    padding: 1.6rem 3.6rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.2rem;
+}
+
+.auth-form__socials-icon {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+}
+
+.auth-form__socials-tittle {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+.auth-form__socials--fb {
+    display: inline-block;
+    color: white;
+    background-color: #3a5a98;
+    border-radius: 0.5rem;
+}
+
+.auth-form__socials--gg {
+    display: inline-block;
+    color: #666;
+    border-radius: 0.5rem;
+    background-color: white;
+}

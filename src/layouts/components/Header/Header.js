@@ -30,94 +30,9 @@ import { InboxIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
 import { useEffect, useRef, useState } from 'react';
+import AuthForm from '../AuthForm/AuthForm';
 
 const cx = classNames.bind(styles);
-
-const handleClickBtnSignIn = () => {
-    console.log('Sign In');
-};
-
-const handleClickBtnSignUp = () => {
-    console.log('Sign Up');
-};
-
-const MENU_ITEMS = [
-    {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        tittle: 'English',
-        children: {
-            tittle: 'Language',
-            data: [
-                {
-                    code: 'en',
-                    tittle: 'Engligh',
-                },
-                {
-                    code: 'vi',
-                    tittle: 'Tiếng việt',
-                },
-            ],
-        },
-    },
-    {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        tittle: 'Feedback and Help',
-        to: '/feedback',
-    },
-    {
-        tittle: 'Đăng nhập',
-        separate: true,
-        onClick: handleClickBtnSignIn,
-        noIcon: true,
-    },
-    {
-        tittle: 'Đăng ký',
-        onClick: handleClickBtnSignUp,
-        noIcon: true,
-    },
-];
-
-const USER_MENU = [
-    {
-        icon: <FontAwesomeIcon icon={faUser} />,
-        tittle: 'View profile',
-        to: '/@datt',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faGear} />,
-        tittle: 'Settings',
-        to: '/settings',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        tittle: 'English',
-        children: {
-            tittle: 'Language',
-            data: [
-                {
-                    code: 'en',
-                    tittle: 'Engligh',
-                },
-                {
-                    code: 'vi',
-                    tittle: 'Tiếng việt',
-                },
-            ],
-        },
-    },
-    {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        tittle: 'Feedback and Help',
-        to: '/feedback',
-    },
-
-    {
-        icon: <FontAwesomeIcon icon={faSignOut} />,
-        tittle: 'Log out',
-        to: '/logout',
-        separate: true,
-    },
-];
 
 const handleMenuChange = (menuItem) => {
     console.log(menuItem);
@@ -127,6 +42,8 @@ function Header({ isHomePage = false }) {
     const inputMobile = useRef();
     const currentUser = false;
     const hasCart = true;
+    const [showSignIn, setShowSignIn] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
 
     useEffect(() => {
         inputMobile.current.checked = false;
@@ -147,9 +64,106 @@ function Header({ isHomePage = false }) {
         };
     }, []);
 
+    const showSignInForm = (value = true) => {
+        setShowSignIn(value);
+    };
+
+    const showSignUpForm = (value = true) => {
+        setShowSignUp(value);
+    };
+
+    const MENU_ITEMS = [
+        {
+            icon: <FontAwesomeIcon icon={faEarthAsia} />,
+            tittle: 'English',
+            children: {
+                tittle: 'Language',
+                data: [
+                    {
+                        code: 'en',
+                        tittle: 'Engligh',
+                    },
+                    {
+                        code: 'vi',
+                        tittle: 'Tiếng việt',
+                    },
+                ],
+            },
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            tittle: 'Feedback and Help',
+            to: '/feedback',
+        },
+        {
+            tittle: 'Đăng nhập',
+            separate: true,
+            onClick: showSignInForm,
+            noIcon: true,
+        },
+        {
+            tittle: 'Đăng ký',
+            onClick: showSignUpForm,
+            noIcon: true,
+        },
+    ];
+
+    const USER_MENU = [
+        {
+            icon: <FontAwesomeIcon icon={faUser} />,
+            tittle: 'View profile',
+            to: '/@datt',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            tittle: 'Settings',
+            to: '/settings',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faEarthAsia} />,
+            tittle: 'English',
+            children: {
+                tittle: 'Language',
+                data: [
+                    {
+                        code: 'en',
+                        tittle: 'Engligh',
+                    },
+                    {
+                        code: 'vi',
+                        tittle: 'Tiếng việt',
+                    },
+                ],
+            },
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            tittle: 'Feedback and Help',
+            to: '/feedback',
+        },
+
+        {
+            icon: <FontAwesomeIcon icon={faSignOut} />,
+            tittle: 'Log out',
+            to: '/logout',
+            separate: true,
+        },
+    ];
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('container')}>
+                {showSignIn ? (
+                    <AuthForm signIn showSignInForm={showSignInForm} showSignUpForm={showSignUpForm} />
+                ) : (
+                    <></>
+                )}
+                {showSignUp ? (
+                    <AuthForm signUp showSignInForm={showSignInForm} showSignUpForm={showSignUpForm} />
+                ) : (
+                    <></>
+                )}
+
                 <input
                     ref={inputMobile}
                     hidden

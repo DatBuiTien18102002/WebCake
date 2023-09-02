@@ -29,7 +29,6 @@ function Menu({ children, items = [], arrow = false, hideOnClick = false, onClic
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
                         } else if (item.tittle === 'Đăng nhập' || item.tittle === 'Đăng ký') {
-                            console.log('onclick');
                             item.onClick();
                         } else {
                             onClick(item);
