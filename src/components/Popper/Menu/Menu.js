@@ -28,10 +28,10 @@ function Menu({ children, items = [], arrow = false, hideOnClick = false, onClic
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
-                        } else if (item.tittle === 'Đăng nhập' || item.tittle === 'Đăng ký') {
-                            item.onClick();
+                            // } else if (item.tittle === 'Đăng nhập' || item.tittle === 'Đăng ký') {
+                            //     item.onClick();
                         } else {
-                            onClick(item);
+                            item.onClick();
                         }
                     }}
                 />

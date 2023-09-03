@@ -61,9 +61,10 @@
 
 .menu-img {
     img {
-        width: 15rem;
+        width: 10rem;
         height: 10rem;
         object-fit: unset;
+        max-width: unset;
     }
 }
 .menu-item-info {
@@ -112,15 +113,34 @@
         margin-bottom: 3rem;
         transition: all 0.2s linear;
 
+        .menu-link {
+            color: var(--primary);
+        }
+
         &:hover {
             background-color: var(--primary);
-            color: white;
             border-color: var(--primary);
+
+            .menu-link {
+                color: white;
+            }
         }
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
+    .menu-list {
+        column-gap: 5rem;
+    }
+    .menu-img {
+        img {
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+}
+
+@media screen and (max-width: 842px) {
     .menu-list {
         grid-template-columns: 1fr;
         column-gap: 10rem;

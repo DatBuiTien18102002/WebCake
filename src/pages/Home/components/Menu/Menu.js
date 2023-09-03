@@ -4,6 +4,10 @@ import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiamond } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button/Button';
+import { useEffect, useState } from 'react';
+import menuApi from '~/services/menuApi';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const menuItems = [
@@ -46,6 +50,21 @@ const menuItems = [
 ];
 
 function Menu() {
+    const [menu, setMenu] = useState([]);
+    useEffect(() => {
+        const fetchApi = async () => {
+            try {
+                const result = await menuApi.getAll();
+                setMenu(result);
+                console.log(result);
+            } catch (error) {
+                console.log('Failed', error);
+            }
+        };
+
+        fetchApi();
+    }, []);
+
     return (
         <section id="DiscoverMenu" className={cx('menu')}>
             <div className={cx('container')}>
@@ -57,8 +76,8 @@ function Menu() {
                                 <h6>Có gì đặc biệt ở đây</h6>
                             </div>
                             <div className={cx('menu-list')}>
-                                {menuItems.map((menuItem) => (
-                                    <div key={menuItem.name} className={cx('menu-item')}>
+                                {menu.map((menuItem) => (
+                                    <div key={menuItem.id} className={cx('menu-item')}>
                                         <div className={cx('menu-img')}>
                                             <img src={menuItem.image} alt="" />
                                         </div>
@@ -68,7 +87,9 @@ function Menu() {
                                                     <FontAwesomeIcon icon={faDiamond} className={cx('diamond-icon')} />
                                                     <span>{menuItem.name}</span>
                                                 </div>
-                                                <div className={cx('menu-item-price')}>{menuItem.price}</div>
+                                                <div className={cx('menu-item-price')}>
+                                                    {menuItem.price.toLocaleString('vi-VN')} đ
+                                                </div>
                                             </div>
 
                                             <div className={cx('menu-item-desc')}>{menuItem.info}</div>
@@ -77,7 +98,9 @@ function Menu() {
                                 ))}
                             </div>
                             <Button outline className={cx('menu-btn')}>
-                                Xem thêm menu
+                                <Link className={cx('menu-link')} to={config.routes.product}>
+                                    Xem thêm menu
+                                </Link>
                             </Button>
                         </div>
                     </div>

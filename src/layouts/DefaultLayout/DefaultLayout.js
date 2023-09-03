@@ -6,7 +6,9 @@ import Footer from '../components/Footer/Footer';
 import { Link, useLocation } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import config from '~/config';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import productApi from '~/services/productApi';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +16,10 @@ function DefaultLayout({ children }) {
     const location = useLocation();
 
     const listPath = location.pathname.split('/').filter((path) => path !== '');
-    console.log(listPath);
+    const products = useSelector((state) => state.products);
+
+    const currentProduct = products.find((productItem) => productItem.id === listPath[listPath.length - 1]);
+
     return (
         <>
             <Header />
@@ -40,7 +45,9 @@ function DefaultLayout({ children }) {
                                     </BreadcrumbItem>
                                 );
                             })}
-                            <BreadcrumbItem active>{listPath[listPath.length - 1]}</BreadcrumbItem>
+                            <BreadcrumbItem active>
+                                {!!currentProduct ? currentProduct.name : listPath[listPath.length - 1]}
+                            </BreadcrumbItem>
                         </Breadcrumb>
                     </div>
                     {/* </div> */}
