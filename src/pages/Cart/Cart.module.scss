@@ -1,0 +1,134 @@
+.cart-tittle {
+    color: #464646;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.cart-heading {
+    color: var(--primary) !important;
+    text-align: center;
+}
+
+.cart-heading:nth-child(2) {
+    width: 15rem;
+}
+
+.cart-cell {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-img {
+    width: 12rem;
+    height: 12rem;
+    padding: 1rem;
+}
+
+.cart-delete {
+    cursor: pointer;
+}
+
+.cart-total {
+    margin-bottom: 2rem;
+}
+
+.cart-total__text {
+    padding: 1rem 1.5rem;
+}
+
+.cart-total__price {
+    float: right;
+    padding: 1rem 1.5rem;
+    color: var(--primary);
+}
+
+.cart-checkout {
+    width: 100%;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+}
+
+//               Cart mobile
+.cart-info-mobile {
+    display: none;
+}
+
+.cart-heading-mobile {
+    text-align: center;
+    color: var(--primary) !important;
+}
+
+.cart-heading-mobile:nth-child(2) {
+    width: 27rem;
+}
+
+.cart-cell-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+}
+
+.cart-desc {
+    width: 100%;
+}
+.cart-heading {
+}
+.cart-name {
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.cart-price-wrapper {
+    margin-top: 1rem;
+    color: black;
+}
+.cart-price {
+}
+.cart-multiply {
+    margin: 0 1rem;
+}
+.cart-qnt {
+}
+
+@media screen and (max-width: 767px) {
+    .cart-info {
+        display: none;
+    }
+    .cart-info-mobile {
+        display: table;
+    }
+    .cart-back {
+        width: 100%;
+        margin-bottom: 3rem;
+        color: var(--primary);
+        background-color: transparent;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 471px) {
+    .cart-heading-mobile {
+        vertical-align: middle;
+    }
+    .cart-heading-mobile:nth-child(2) {
+        width: 18rem;
+    }
+    .cart-cell-mobile {
+        flex-direction: column;
+        height: 18rem;
+    }
+}

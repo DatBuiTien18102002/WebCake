@@ -294,7 +294,6 @@ function Header({ isHomePage = false }) {
 
                 <div className={cx('action')}>
                     <HeadlessTippy
-                        visible
                         interactive
                         placement="bottom-end"
                         offset={[3, 17]}
@@ -341,7 +340,7 @@ function Header({ isHomePage = false }) {
                                                     </li>
                                                 ))}
                                             </ul>
-                                            <Button primary className={cx('cart-button')}>
+                                            <Button to={config.routes.cart} primary className={cx('cart-button')}>
                                                 Xem giỏ hàng
                                             </Button>
                                         </div>
