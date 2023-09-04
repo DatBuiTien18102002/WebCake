@@ -31,6 +31,8 @@ import Image from '~/components/Image';
 import Search from '../Search';
 import { useEffect, useRef, useState } from 'react';
 import AuthForm from '../AuthForm/AuthForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteCart } from '~/slice/cartSlice';
 
 const cx = classNames.bind(styles);
 
@@ -44,6 +46,9 @@ function Header({ isHomePage = false }) {
     const hasCart = true;
     const [showSignIn, setShowSignIn] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
+
+    const carts = useSelector((state) => state.carts);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         inputMobile.current.checked = false;
@@ -70,6 +75,10 @@ function Header({ isHomePage = false }) {
 
     const showSignUpForm = (value = true) => {
         setShowSignUp(value);
+    };
+
+    const handleDeleteCart = (id) => {
+        dispatch(deleteCart(id));
     };
 
     const MENU_ITEMS = [
@@ -285,88 +294,52 @@ function Header({ isHomePage = false }) {
 
                 <div className={cx('action')}>
                     <HeadlessTippy
+                        visible
                         interactive
                         placement="bottom-end"
                         offset={[3, 17]}
                         render={(attrs) => (
                             <div className={cx('cart-result')} tabIndex="-1" {...attrs}>
                                 <PopperWrapper arrow>
-                                    {hasCart ? (
+                                    {carts.length > 0 ? (
                                         <div className={cx('cart__has-cart')}>
                                             <h4 className={cx('cart-tittle')}>Sản phẩm đã thêm</h4>
                                             <ul className={cx('cart-list')}>
-                                                <li className={cx('cart-item')}>
-                                                    <img
-                                                        className={cx('cart-img')}
-                                                        src={images.cake.creamCake}
-                                                        alt=""
-                                                    />
-                                                    <div className={cx('cart-info')}>
-                                                        <div className={cx('cart-heading')}>
-                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
-                                                            <div className={cx('cart-price-wrapper')}>
-                                                                <span className={cx('cart-price')}>2.000.000đ</span>
-                                                                <span className={cx('cart-multiply')}>x</span>
-                                                                <span className={cx('cart-qnt')}>2</span>
+                                                {carts.map((cart) => (
+                                                    <li key={cart.id} className={cx('cart-item')}>
+                                                        <img
+                                                            className={cx('cart-img')}
+                                                            src={`../${cart.image}`}
+                                                            alt=""
+                                                        />
+                                                        <div className={cx('cart-info')}>
+                                                            <div className={cx('cart-heading')}>
+                                                                <h5 className={cx('cart-name')}>{cart.name}</h5>
+                                                                <div className={cx('cart-price-wrapper')}>
+                                                                    <span className={cx('cart-price')}>
+                                                                        {cart.price.toLocaleString('vi-VN')} đ
+                                                                    </span>
+                                                                    <span className={cx('cart-multiply')}>x</span>
+                                                                    <span className={cx('cart-qnt')}>
+                                                                        {cart.quantity}
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className={cx('cart-body')}>
+                                                                <span className={cx('cart-desc')}>
+                                                                    Phân loại: {cart.type}
+                                                                </span>
+                                                                <span
+                                                                    className={cx('cart-delete')}
+                                                                    onClick={() => handleDeleteCart(cart.id)}
+                                                                >
+                                                                    Xóa
+                                                                </span>
                                                             </div>
                                                         </div>
-
-                                                        <div className={cx('cart-body')}>
-                                                            <span className={cx('cart-desc')}>
-                                                                Phân loại: Bánh ngọt
-                                                            </span>
-                                                            <span className={cx('cart-delete')}>Xóa</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li className={cx('cart-item')}>
-                                                    <img
-                                                        className={cx('cart-img')}
-                                                        src={images.cake.creamCake}
-                                                        alt=""
-                                                    />
-                                                    <div className={cx('cart-info')}>
-                                                        <div className={cx('cart-heading')}>
-                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
-                                                            <div className={cx('cart-price-wrapper')}>
-                                                                <span className={cx('cart-price')}>2.000.000đ</span>
-                                                                <span className={cx('cart-multiply')}>x</span>
-                                                                <span className={cx('cart-qnt')}>2</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className={cx('cart-body')}>
-                                                            <span className={cx('cart-desc')}>
-                                                                Phân loại: Bánh ngọt
-                                                            </span>
-                                                            <span className={cx('cart-delete')}>Xóa</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li className={cx('cart-item')}>
-                                                    <img
-                                                        className={cx('cart-img')}
-                                                        src={images.cake.creamCake}
-                                                        alt=""
-                                                    />
-                                                    <div className={cx('cart-info')}>
-                                                        <div className={cx('cart-heading')}>
-                                                            <h5 className={cx('cart-name')}>Bánh crep thơm ngon</h5>
-                                                            <div className={cx('cart-price-wrapper')}>
-                                                                <span className={cx('cart-price')}>2.000.000đ</span>
-                                                                <span className={cx('cart-multiply')}>x</span>
-                                                                <span className={cx('cart-qnt')}>2</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className={cx('cart-body')}>
-                                                            <span className={cx('cart-desc')}>
-                                                                Phân loại: Bánh ngọt
-                                                            </span>
-                                                            <span className={cx('cart-delete')}>Xóa</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                    </li>
+                                                ))}
                                             </ul>
                                             <Button primary className={cx('cart-button')}>
                                                 Xem giỏ hàng
@@ -384,7 +357,7 @@ function Header({ isHomePage = false }) {
                     >
                         <button className={cx('shopping-btn')}>
                             <FontAwesomeIcon icon={faCartShopping} />
-                            <span className={cx('cart-quality')}>1</span>
+                            {carts.length > 0 ? <span className={cx('cart-quality')}>{carts.length}</span> : <></>}
                         </button>
                     </HeadlessTippy>
 

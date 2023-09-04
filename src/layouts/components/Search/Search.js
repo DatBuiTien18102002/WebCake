@@ -11,6 +11,7 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import images from '~/assets/images';
+import productApi from '~/services/productApi';
 
 const cx = classNames.bind(styles);
 const sampleData = [
@@ -35,25 +36,25 @@ function Search() {
             setSearchResult([]);
             return;
         }
-        setLoading(true);
-        setTimeout(() => {
-            setSearchResult(sampleData);
-            setLoading(false);
-        }, 1000);
+        // setLoading(true);
+        // setTimeout(() => {
+        //     setSearchResult(sampleData);
+        //     setLoading(false);
+        // }, 1000);
 
         //Used when having a url
-        // const fetchApi = async () => {
-        //     try {
-        //         setLoading(true);
-        //         const result = await searchService.search(debounceHI);
-        //         setSearchResult(result);
-        //         setLoading(false);
-        //     } catch (error) {
-        //         setLoading(true);
-        //     }
-        // };
+        const fetchApi = async () => {
+            try {
+                setLoading(true);
+                const result = await productApi.search(debounceHI);
+                setSearchResult(result);
+                setLoading(false);
+            } catch (error) {
+                setLoading(true);
+            }
+        };
 
-        // fetchApi();
+        fetchApi();
     }, [debounceHI]);
 
     const handleInput = (e) => {

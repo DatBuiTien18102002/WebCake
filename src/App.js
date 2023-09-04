@@ -5,7 +5,8 @@ import { Fragment, useEffect } from 'react';
 import DefaultLayout from './layouts/DefaultLayout';
 import productApi from './services/productApi';
 import { useDispatch } from 'react-redux';
-import { setProducts } from './pages/Product/productSlice';
+import { setProducts } from './slice/productSlice';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function App() {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                let result = await productApi.get();
+                let result = await productApi.getAll();
                 dispatch(setProducts(result));
             } catch (error) {
                 console.log('Failed', error);
@@ -41,6 +42,7 @@ function App() {
                                 path={route.path}
                                 element={
                                     <Layout>
+                                        <ScrollToTop />
                                         <Page />
                                     </Layout>
                                 }

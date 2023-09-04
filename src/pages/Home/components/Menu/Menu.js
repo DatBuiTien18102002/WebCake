@@ -77,7 +77,7 @@ function Menu() {
                             </div>
                             <div className={cx('menu-list')}>
                                 {menu.map((menuItem) => (
-                                    <div key={menuItem.id} className={cx('menu-item')}>
+                                    <Link to={`/Product/${menuItem.id}`} key={menuItem.id} className={cx('menu-item')}>
                                         <div className={cx('menu-img')}>
                                             <img src={menuItem.image} alt="" />
                                         </div>
@@ -94,7 +94,7 @@ function Menu() {
 
                                             <div className={cx('menu-item-desc')}>{menuItem.info}</div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
                             <Button outline className={cx('menu-btn')}>

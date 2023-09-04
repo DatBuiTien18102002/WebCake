@@ -1,12 +1,14 @@
-import productApi from '~/services/productApi';
-
 const { createSlice } = require('@reduxjs/toolkit');
+
+const storageProducts = JSON.parse(localStorage.getItem('productList'));
 
 const product = createSlice({
     name: 'products',
-    initialState: [],
+    initialState: storageProducts || [],
     reducers: {
         setProducts: (state, action) => {
+            const jsonListProduct = JSON.stringify(action.payload);
+            localStorage.setItem('productList', jsonListProduct);
             return action.payload;
         },
         addProduct: (state, action) => {
