@@ -5,6 +5,7 @@ import Blog from '~/pages/Blog';
 import Cart from '~/pages/Cart';
 import Contact from '~/pages/Contact';
 import Home from '~/pages/Home';
+import PageNotFound from '~/pages/PageNotFound/PageNotFound';
 import Product from '~/pages/Product';
 import ProductDetail from '~/pages/ProductDetail';
 

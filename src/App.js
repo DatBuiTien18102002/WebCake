@@ -7,6 +7,7 @@ import productApi from './services/productApi';
 import { useDispatch } from 'react-redux';
 import { setProducts } from './slice/productSlice';
 import ScrollToTop from './components/ScrollToTop';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
     const dispatch = useDispatch();
@@ -49,6 +50,7 @@ function App() {
                             />
                         );
                     })}
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </Router>

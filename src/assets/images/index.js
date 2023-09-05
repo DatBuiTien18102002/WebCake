@@ -7,6 +7,7 @@ const images = {
     contactImg: require('~/assets/images/contact-us-image.jpg'),
     aboutImg: require('~/assets/images/aboutus.jpg'),
     noCart: require('~/assets/images/empty_cart.png'),
+    notFound: require('~/assets/images/PageNotFound.jpg'),
 
     cake: {
         cupcake: require('~/assets/images/Cake/cupcake.jpg'),
