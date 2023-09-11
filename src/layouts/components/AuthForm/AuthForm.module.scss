@@ -34,6 +34,7 @@
     border-radius: 1rem;
     background-color: white;
     overflow: hidden;
+    margin: 0 1rem;
 }
 
 .auth-form__container {
@@ -122,6 +123,10 @@
     }
 }
 
+.auth-form__socials--link {
+    padding: 1rem;
+}
+
 .auth-form__socials {
     background-color: #f5f5f5;
     padding: 1.6rem 3.6rem;
@@ -130,15 +135,20 @@
     margin-top: 3.2rem;
 }
 
+.auth-form__socials--wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .auth-form__socials-icon {
     display: inline-block;
     font-size: 1.8rem;
-    padding-left: 1rem;
+    margin-right: 1rem;
 }
 
 .auth-form__socials-tittle {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding-top: 0.5rem;
 }
 
 .auth-form__socials--fb {
@@ -153,4 +163,15 @@
     color: #666;
     border-radius: 0.5rem;
     background-color: white;
+}
+
+@media screen and (max-width: 575px) {
+    .auth-form__socials {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .auth-form__socials--wrapper {
+        justify-content: center;
+    }
 }

@@ -161,16 +161,26 @@ function AuthForm(props) {
                             </Formik>
                         </div>
                         <div className={cx('auth-form__socials')}>
-                            <a href="https://www.facebook.com/" className={cx('auth-form__socials--fb')}>
-                                <FontAwesomeIcon className={cx('auth-form__socials-icon')} icon={faFacebookSquare} />
-                                <span className={cx('auth-form__socials-tittle')}>Kết nối với Facebook</span>
+                            <a
+                                href="https://www.facebook.com/"
+                                className={cx('auth-form__socials--link', 'auth-form__socials--fb')}
+                            >
+                                <div className={cx('auth-form__socials--wrapper')}>
+                                    <FontAwesomeIcon
+                                        className={cx('auth-form__socials-icon')}
+                                        icon={faFacebookSquare}
+                                    />
+                                    <span className={cx('auth-form__socials-tittle')}>Kết nối với Facebook</span>
+                                </div>
                             </a>
                             <a
                                 href="https://www.google.com/webhp?hl=vi&sa=X&ved=0ahUKEwj-tLPmg_P6AhUU9XMBHc0lBpEQPAgI"
-                                className={cx('auth-form__socials--gg')}
+                                className={cx('auth-form__socials--link', 'auth-form__socials--gg')}
                             >
-                                <FontAwesomeIcon className={cx('auth-form__socials-icon')} icon={faGoogle} />
-                                <span className={cx('auth-form__socials-tittle')}>Kết nối với Google</span>
+                                <div className={cx('auth-form__socials--wrapper')}>
+                                    <FontAwesomeIcon className={cx('auth-form__socials-icon')} icon={faGoogle} />
+                                    <span className={cx('auth-form__socials-tittle')}>Kết nối với Google</span>
+                                </div>
                             </a>
                         </div>
                     </div>
